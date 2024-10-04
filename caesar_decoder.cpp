@@ -10,4 +10,7 @@ char x;
 cout << "Type your message here: "; // Type a message here and press enter
 cin >> x; // Get user input from the keyboard
   
+const int length = x.length(); 
+char* char_array = new char[length + 1]; 
+
 }
