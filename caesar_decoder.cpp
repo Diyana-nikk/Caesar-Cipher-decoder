@@ -15,7 +15,7 @@ cin.getline(message,250); // Get user input from the keyboard
 
 int shift;
 
-cout << "Enter the shift value: \n";
+cout << "Enter the shift value: \n" << endl;
 cin>> shift;
 
 const int length = strlen(message); 
@@ -45,5 +45,6 @@ for (int i = 0; i < length+1; i++) {
         output[i]=item;
     }
     }
- cout << "Encrypted message: " << output;
+ cout << "Encrypted message: " << output << endl;
+   return 0;
 }
