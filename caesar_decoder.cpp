@@ -25,22 +25,16 @@ for (int i = 0; i < length+1; i++) {
       item = message[i]; // get ith character of the message
 
     // if lower case
-    if (item >='a' && item <= 'z'){
-        item= item + shift;
-        if(item>'z'){
-            item=item-'z'+'a'-1; // loop over
+   if (item >= 'a' && item <= 'z'){
+            item = ((item - 'a' + shift) % 26) + 'a'; //Wrap-around for lowercase ASKII characters
+            output[i] = item;
         }
-        output[i]=item;
-    }
 
-    //if lowercase:
-    else if (item >='A' && item <='Z'){
-        item = item + shift;
-         if(item>'Z'){
-            item=item-'Z'+'A'-1; // loop over
+    // if upper case
+        else if (item >= 'A' && item <= 'Z'){
+            item = ((item - 'A' + shift) % 26) + 'A'; //Wrap-around for uppercase
+            output[i] = item;
         }
-        output[i]=item;
-    }
     else{
         output[i]=item;
     }
