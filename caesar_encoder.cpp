@@ -33,7 +33,7 @@ for (int i = 0; i < length+1; i++) {
     // if upper case
         else if (item >= 'A' && item <= 'Z'){
             item = ((item - 'A' + shift) % 26) + 'A'; //Wrap-around for uppercase
-            output[i]g+ = item;
+            output[i]= item;
         }
     else{
         output[i]=item;
