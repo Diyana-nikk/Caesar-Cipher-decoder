@@ -7,13 +7,16 @@ using namespace std;
 
 int main()
 {
-string x; 
-cout << "Type your message here: \n"; // Type a message here and press enter
+char choice;
+do{
+// declare variables:
 char message[250];
 char output[250];
-cin.getline(message,250); // Get user input from the keyboard
 
 int shift;
+
+cout << "Type your message here: \n"; // Type a message here and press enter
+cin.getline(message,250); // Get user input from the keyboard
 
 cout << "Enter the shift value: \n" << endl;
 cin>> shift;
@@ -40,5 +43,15 @@ for (int i = 0; i < length+1; i++) {
     }
     }
  cout << "Encrypted message: " << output << endl;
+
+  // Ask the user if they want to run again
+        cout << "Do you want to encode another message? (y/n): ";
+        cin >> choice;
+ 
+}while (choice == 'y' || choice == 'Y');
+
+    cout << "See you later!" << endl;
+
    return 0;
+
 }
