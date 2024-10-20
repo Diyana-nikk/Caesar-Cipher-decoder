@@ -22,7 +22,7 @@ cout << "Type your message here: \n" << endl; // Type a message here and press e
 cin.ignore(); // Ignore leftover newline from previous input
 cin.getline(message,250); // Get user input from the keyboard
 
-cout << "Enter the shift value: \n" << endl;
+cout << "Enter an integer shift value: \n" << endl;
 cin>> shift;
 // discards the input buffer
 cin.ignore(numeric_limits<streamsize>::max(), '\n');
