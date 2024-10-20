@@ -19,7 +19,7 @@ while (running ){
 
     std::cout << "Type your message here: \n" << endl; // Type a message here and press enter
 
-    cin.ignore(); // Ignore leftover newline from previous input
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignore remaining characters in the input buffer
     cin.getline(message,250); // Get user input from the keyboard
 
     //try getting the shift value
