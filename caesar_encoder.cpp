@@ -2,24 +2,30 @@
 #include <vector>
 #include <string>
 #include <cstring>
+#include <limits>
 
 using namespace std;
 
 int main()
 {
 char choice;
-do{
+bool running = true;
+while (running ){
 // declare variables:
 char message[250];
 char output[250];
 
 int shift;
 
-cout << "Type your message here: \n"; // Type a message here and press enter
+cout << "Type your message here: \n" << endl; // Type a message here and press enter
+
+cin.ignore(); // Ignore leftover newline from previous input
 cin.getline(message,250); // Get user input from the keyboard
 
 cout << "Enter the shift value: \n" << endl;
 cin>> shift;
+// discards the input buffer
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 const int length = strlen(message); 
 
@@ -45,10 +51,13 @@ for (int i = 0; i < length+1; i++) {
  cout << "Encrypted message: " << output << endl;
 
   // Ask the user if they want to run again
-        cout << "Do you want to encode another message? (y/n): ";
-        cin >> choice;
+ cout << "Do you want to encode another message? (y/n): " << endl;
+ cin >> choice;
+ if (choice != 'y'){
+    running = false;
+ }
  
-}while (choice == 'y' || choice == 'Y');
+}
 
     cout << "See you later!" << endl;
 
